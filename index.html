@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kamuju Vivek Ram Sri | Portfolio</title>
+<meta name="description" content="Animated portfolio for Software, Frontend and ML roles." />
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+<style>
+:root{
+  --primary:#38bdf8;
+  --bg:#020617;
+  --card:#0f172a;
+  --text:#e5e7eb;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:"Segoe UI",Roboto,Arial,sans-serif;
+  background:radial-gradient(circle at top,#0ea5e9,var(--bg) 65%);
+  color:var(--text);
+}
+
+/* Container */
+.container{
+  max-width:980px;
+  margin:60px auto;
+  padding:45px;
+  background:rgba(2,6,23,.88);
+  border-radius:22px;
+  border:1px solid rgba(56,189,248,.4);
+  box-shadow:0 0 35px rgba(56,189,248,.35);
+}
+
+/* Navigation */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:18px;
+  margin-bottom:35px;
+  flex-wrap:wrap;
+}
+nav button{
+  background:none;
+  border:none;
+  color:var(--primary);
+  font-weight:600;
+  font-size:16px;
+  cursor:pointer;
+}
+nav button.active{
+  border-bottom:2px solid var(--primary);
+}
+
+/* Header */
+header{
+  text-align:center;
+  margin-bottom:40px;
+}
+.typing{
+  color:var(--primary);
+  font-weight:600;
+  border-right:3px solid var(--primary);
+  white-space:nowrap;
+  overflow:hidden;
+  width:fit-content;
+  margin:10px auto;
+  animation:typing 4s steps(40),blink .8s infinite;
+}
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+
+/* Hero links */
+.hero-links{
+  margin-top:22px;
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.hero-links a{
+  padding:12px 18px;
+  border-radius:14px;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  text-decoration:none;
+  font-weight:600;
+  box-shadow:0 0 18px rgba(56,189,248,.6);
+  transition:.35s;
+}
+.hero-links a:hover{
+  transform:translateY(-6px) scale(1.08);
+  box-shadow:0 0 30px rgba(255,255,255,.95);
+  background:rgba(56,189,248,.15);
+}
+
+/* ===== Sections ===== */
+.content-section{
+  display:none;
+  padding:30px;
+  background:var(--card);
+  border-radius:20px;
+  border:1px solid rgba(56,189,248,.35);
+  margin-top:25px;
+  cursor:pointer;
+}
+
+/* On section load */
+.content-section.animate{
+  animation:sectionGlow .7s ease;
+}
+
+/* On click animation */
+.content-section.clicked{
+  animation:boxClick .35s ease;
+}
+
+@keyframes sectionGlow{
+  from{
+    opacity:0;
+    transform:translateY(25px) scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0) scale(1.02);
+    box-shadow:0 0 35px rgba(255,255,255,.9);
+  }
+}
+
+@keyframes boxClick{
+  0%{
+    transform:scale(1);
+    box-shadow:0 0 20px rgba(255,255,255,.6);
+  }
+  50%{
+    transform:scale(1.03);
+    box-shadow:0 0 45px rgba(255,255,255,.95);
+  }
+  100%{
+    transform:scale(1);
+    box-shadow:0 0 25px rgba(255,255,255,.6);
+  }
+}
+
+/* Skills */
+.skills span{
+  padding:8px 16px;
+  border-radius:12px;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  margin:6px;
+  display:inline-block;
+}
+
+/* Footer */
+.footer{
+  text-align:center;
+  font-size:14px;
+  color:#94a3b8;
+  margin-top:40px;
+  padding-top:20px;
+  border-top:1px solid #334155;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<nav>
+  <button class="active" onclick="showSection('summary',this)">
+    <i class="fa-solid fa-user-tie"></i> Summary
+  </button>
+  <button onclick="showSection('skills',this)">
+    <i class="fa-solid fa-screwdriver-wrench"></i> Skills
+  </button>
+  <button onclick="showSection('projects',this)">
+    <i class="fa-solid fa-rocket"></i> Projects
+  </button>
+  <button onclick="showSection('internships',this)">
+    <i class="fa-solid fa-briefcase"></i> Internships
+  </button>
+  <button onclick="showSection('education',this)">
+    <i class="fa-solid fa-graduation-cap"></i> Education
+  </button>
+  <button onclick="showSection('contact',this)">
+    <i class="fa-solid fa-envelope"></i> Contact
+  </button>
+</nav>
+
+<header>
+  <h1>Kamuju Vivek Ram Sri</h1>
+  <p class="typing">Software • Frontend • Machine Learning</p>
+
+  <div class="hero-links">
+    <a href="./Kamuju-VivekRamSri-Resume.pdf.pdf" download>
+      <i class="fa-solid fa-file-arrow-down"></i> Resume
+    </a>
+    <a href="https://www.linkedin.com/in/kamujuvivekramsri" target="_blank">
+      <i class="fa-brands fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/ramsri90" target="_blank">
+      <i class="fa-brands fa-github"></i> GitHub
+    </a>
+    <a href="https://wa.me/916304050076" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> WhatsApp
+    </a>
+    <a href="tel:+916304050076">
+      <i class="fa-solid fa-phone"></i> Call
+    </a>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ramsri.sri2004@gmail.com" target="_blank">
+      <i class="fa-solid fa-envelope"></i> Email
+    </a>
+  </div>
+</header>
+
+<section id="summary" class="content-section" style="display:block">
+  <h2><i class="fa-solid fa-user-tie"></i> Professional Summary</h2>
+  <p>
+    Final-year B.Tech CSE (Data Science) student with strong analytical and problem-solving skills.
+    Experienced in Python, Java, and ML systems. Open to Software, Frontend, and ML roles.
+  </p>
+</section>
+
+<section id="skills" class="content-section">
+  <h2><i class="fa-solid fa-screwdriver-wrench"></i> Technical Skills</h2>
+  <div class="skills">
+    <span>Python</span><span>Java</span><span>C++</span><span>SQL</span>
+    <span>HTML5</span><span>CSS3</span><span>TensorFlow</span>
+    <span>Scikit-Learn</span><span>AWS</span><span>MongoDB</span>
+  </div>
+</section>
+
+<section id="projects" class="content-section">
+  <h2><i class="fa-solid fa-rocket"></i> Projects</h2>
+  <p><strong>Machine Learning Model for Demographic Prediction</strong><br>
+     Age & gender prediction using TensorFlow, OpenCV, and ML pipelines.</p>
+  <p><strong>Pneumonia X-ray Detection (AWS)</strong><br>
+     ResNet18-based deep learning system deployed using AWS SageMaker.</p>
+</section>
+
+<section id="internships" class="content-section">
+  <h2><i class="fa-solid fa-briefcase"></i> Internship Experience</h2>
+  <p><strong>Research Intern – Vishnuspire</strong><br>
+     Market segmentation analysis and reporting.</p>
+  <p><strong>ML Intern – Google AIML Virtual Internship</strong><br>
+     Hands-on ML workflows and evaluation.</p>
+</section>
+
+<section id="education" class="content-section">
+  <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+  <ul>
+    <li>B.Tech CSE (Data Science) – Gayatri Vidya Parishad (2022–2026)</li>
+    <li>Intermediate – SASI Junior College</li>
+    <li>SSC – Sri Chaitanya School</li>
+  </ul>
+</section>
+
+<section id="contact" class="content-section">
+  <h2><i class="fa-solid fa-envelope"></i> Contact</h2>
+  <p><i class="fa-solid fa-phone"></i> +91 6304050076</p>
+  <p>
+    <i class="fa-solid fa-envelope-open"></i>
+    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ramsri.sri2004@gmail.com"
+       target="_blank"
+       style="color:#38bdf8;text-decoration:none;font-weight:600;">
+      ramsri.sri2004@gmail.com
+    </a>
+  </p>
+</section>
+
+<div class="footer">© 2025 Kamuju Vivek Ram Sri</div>
+</div>
+
+<script>
+function showSection(id,btn){
+  document.querySelectorAll('.content-section').forEach(sec=>{
+    sec.style.display='none';
+    sec.classList.remove('animate','clicked');
+  });
+
+  const active=document.getElementById(id);
+  active.style.display='block';
+  void active.offsetWidth;
+  active.classList.add('animate');
+
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* Click animation on section */
+document.addEventListener('click',e=>{
+  const box = e.target.closest('.content-section');
+  if(!box) return;
+  box.classList.remove('clicked');
+  void box.offsetWidth;   // restart animation
+  box.classList.add('clicked');
+});
+</script>
+
+</body>
+</html>
