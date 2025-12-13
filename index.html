@@ -26,7 +26,6 @@ body{
   color:var(--text);
 }
 
-/* Container */
 .container{
   max-width:980px;
   margin:60px auto;
@@ -75,7 +74,6 @@ header{
 @keyframes typing{from{width:0}to{width:100%}}
 @keyframes blink{50%{border-color:transparent}}
 
-/* Hero links */
 .hero-links{
   margin-top:22px;
   display:flex;
@@ -99,7 +97,7 @@ header{
   background:rgba(56,189,248,.15);
 }
 
-/* ===== Sections ===== */
+/* Sections */
 .content-section{
   display:none;
   padding:30px;
@@ -109,42 +107,22 @@ header{
   margin-top:25px;
   cursor:pointer;
 }
-
-/* On section load */
 .content-section.animate{
   animation:sectionGlow .7s ease;
 }
-
-/* On click animation */
 .content-section.clicked{
   animation:boxClick .35s ease;
 }
 
 @keyframes sectionGlow{
-  from{
-    opacity:0;
-    transform:translateY(25px) scale(.95);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0) scale(1.02);
-    box-shadow:0 0 35px rgba(255,255,255,.9);
-  }
+  from{opacity:0;transform:translateY(25px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1.02);
+     box-shadow:0 0 35px rgba(255,255,255,.9)}
 }
-
 @keyframes boxClick{
-  0%{
-    transform:scale(1);
-    box-shadow:0 0 20px rgba(255,255,255,.6);
-  }
-  50%{
-    transform:scale(1.03);
-    box-shadow:0 0 45px rgba(255,255,255,.95);
-  }
-  100%{
-    transform:scale(1);
-    box-shadow:0 0 25px rgba(255,255,255,.6);
-  }
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03);box-shadow:0 0 45px rgba(255,255,255,.95)}
+  100%{transform:scale(1)}
 }
 
 /* Skills */
@@ -202,9 +180,12 @@ header{
     <a href="./Kamuju-VivekRamSri-Resume.pdf.pdf" download>
       <i class="fa-solid fa-file-arrow-down"></i> Resume
     </a>
+
+    <!-- ✅ UPDATED LINKEDIN URL -->
     <a href="https://www.linkedin.com/in/kamujuvivekramsri" target="_blank">
       <i class="fa-brands fa-linkedin"></i> LinkedIn
     </a>
+
     <a href="https://github.com/ramsri90" target="_blank">
       <i class="fa-brands fa-github"></i> GitHub
     </a>
@@ -276,6 +257,7 @@ header{
 </section>
 
 <div class="footer">© 2025 Kamuju Vivek Ram Sri</div>
+
 </div>
 
 <script>
@@ -299,7 +281,7 @@ document.addEventListener('click',e=>{
   const box = e.target.closest('.content-section');
   if(!box) return;
   box.classList.remove('clicked');
-  void box.offsetWidth;   // restart animation
+  void box.offsetWidth;
   box.classList.add('clicked');
 });
 </script>
